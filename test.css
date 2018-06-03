@@ -1,0 +1,75 @@
+
+/*// Extra Large Devices*/
+@media screen and (min-width:1200px){
+	.head{
+		font-size:1.8em;
+		background-color: #111F4D;
+	}
+	p{
+		font-size:1.2em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size:1.4em;
+	}
+	
+}
+
+/*Large Devices*/
+@media screen and (min-width:992px) and (max-width:1199px){
+	.head{
+		font-size:1.6em;
+		background-color: #111F4D;
+	}
+	p{
+		font-size:1em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size:1.3em;
+	}
+	
+}
+
+/*Medium Devices*/
+@media screen and (min-width:768px) and (max-width:991px){
+	.head{
+		font-size:1.6em;
+		background-color: #111F4D;
+	}
+	p{
+		font-size:1em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size:1.3em;
+	}
+	
+}
+
+/*Small Devices*/
+@media screen and (min-width:576px) and (max-width:767px){
+	.head{
+		font-size:1.4em;
+		background-color: #111F4D;
+	}
+	p{
+		font-size:0.9em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size:1.2em;
+	}
+	
+}
+
+/*Mobile Devices*/
+@media screen and (max-width:575px){
+	.head{
+		font-size:1.4em;
+		background-color: #111F4D;
+	}
+	p{
+		font-size:0.9em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size:1.2em;
+	}
+
+}
