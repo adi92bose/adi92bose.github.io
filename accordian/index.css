@@ -1,0 +1,51 @@
+
+:root{
+	font-size: 16px
+}
+body{
+	background-color: gray;
+}
+.parent{
+	display: flex;
+	flex-direction: column;
+}
+.accordion {
+overflow:hidden;
+box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+border-radius:3px;
+background-color:#F5F5F5;
+}
+/*----- Section Titles -----*/
+.accordionPanelTitle {
+width:100%;
+padding:15px 15px 15px 5px;
+display:inline-block;
+text-align: center;
+border-bottom:1px solid #1a1a1a;
+background:#333;
+transition:all linear 0.15s;
+/* Type */
+font-size:1.200rem;
+text-shadow:0px 1px 0px #1a1a1a;
+color:#fff;
+}
+.accordionPanelTitle.active,
+.accordionPanelTitle:hover {
+background:#4c4c4c;
+/* Type */
+text-decoration:none;
+}
+.accordionPanel:last-child .accordionPanelTitle {
+border-bottom:none;
+}
+/*----- Section Content -----*/
+.accordionPanelContent {
+
+font-family: tahoma;
+font-style: italic;
+font-size: 1rem;
+padding:15px;
+display:none;
+}
+
+}
