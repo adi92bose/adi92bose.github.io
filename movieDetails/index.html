@@ -1,0 +1,241 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="index.css">
+
+</head>
+
+<body style="background-color: #0000b3">
+  <div class="container" id="head" style="padding: 2vmax;text-align: center;">
+    <h1 class="display-5" style="text-align: center; color: white">Movie Search</h1>
+    <p class="lead" style="color: white">Enter your favourite movie names to see the information related to those movies..</p>
+  </div>
+	<div class="accordion" id="accordionExample" style="padding: 5vmax">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0" style="text-align: center;">
+        <button  class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Search by Movie Name
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <!-- <div class="card-body" style="text-align: center; font-weight: bold;font-size: 24px;">
+       Movie	: <input type="text" id="fname" name="fname" style="margin: 2px;">
+       Year		: <input type="text" id="year" name="year">
+		<button id="getDataByMovie">Fetch details</button>
+      </div> -->
+    <div class="row">
+    	<div class="col-12 col-md-6">
+    		<div class="input-group mb-3" style="padding: 1vmax; width: 100%; align-content: center;">
+  				<div class="input-group-prepend">
+    				<span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+  				</div>
+  				<input type="text" id="fname" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+			</div>
+		</div>
+
+		<div class="col-12 col-md-6">
+    		<div class="input-group mb-3" style="padding: 1vmax; width: 100%; align-content: center;">
+  				<div class="input-group-prepend">
+    				<span class="input-group-text" id="inputGroup-sizing-default">Year</span>
+  				</div>
+  				<input type="text" id="year" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="wrapper" style="text-align: center; padding-bottom: 1vmax;">
+		<button id="getDataByMovie" type="button" class="btn btn-outline-primary" style="align-content: center;">Fetch Details</button>
+	</div>
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0" style="text-align: center;">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Search by ID
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="row">
+      	<div class="col-md-4"></div>
+    	<div class="col-12 col-md-4">
+    		<div class="input-group mb-3" style="padding: 1vmax; width: 100%; align-content: center;">
+  				<div class="input-group-prepend">
+    				<span class="input-group-text" id="inputGroup-sizing-default">ID</span>
+  				</div>
+  				<input type="text" id="movieID" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+    </div>
+    <div class="wrapper" style="text-align: center; padding-bottom: 1vmax;">
+		<button id="getDataById" type="button" class="btn btn-outline-primary" style="align-content: center;">Fetch Details</button>
+	</div>
+  </div>
+</div>
+</div>
+
+<section id="dataSection" style="display: none">
+	<div class="container-fluid">
+
+		<div class="row rowStyle">
+			<div class="col-md-4"></div>
+			<div class="col-12 col-md-4">
+			<div class="card bg-light mb-3">
+  				<div class="card-header" id="movie"></div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="poster"></p>
+  					</div>
+			</div>
+			</div>
+			<div class="col-md-4"></div>
+			
+		</div>
+
+		<div class="row rowStyle">
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Director</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="director"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light sm-3">
+  				<div class="card-header">Released</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="release"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Runtime</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="runtime"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Boxoffice</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="boxoffice"></p>
+  					</div>
+			</div>
+			</div>
+		</div>
+
+
+		<div class="row rowStyle">
+			<div class="col-12 col-sm-6">
+				<div class="card bg-light mb-3">
+  				<div class="card-header">Plot</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="plot"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Ratings</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="rating"></p>
+  					</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="row rowStyle">
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Actors</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="actor"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">imdbRatings</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="imdb"></p>
+  					</div>
+			</div>
+			</div>
+
+			
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Awards</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="award"></p>
+  					</div>
+			</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-3">
+			<div class="card bg-light mb-3">
+  				<div class="card-header">Production</div>
+  					<div class="card-body">
+    					<!-- <h5 class="card-title">Light card title</h5> -->
+    					<p class="card-text" id="production"></p>
+  					</div>
+			</div>
+			</div>
+
+
+		</div>
+
+
+
+	</div>
+</section>
+
+<footer>
+	<div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://github.com/adi92bose/adi92bose.github.io"> Aditya</a>
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
