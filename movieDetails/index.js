@@ -3,13 +3,13 @@ $(document).ready(() => {
  $('#getDataByMovie').click(()=>{
     let fname = document.getElementById("fname").value;
     let year =  document.getElementById("year").value;
-    let movieUrl = 'http://www.omdbapi.com/?t='+fname+'&y='+year+'&apikey=f2d72e97';
+    let movieUrl = 'https://www.omdbapi.com/?t='+fname+'&y='+year+'&apikey=f2d72e97';
           getAllData(movieUrl); 
 })
 
 $('#getDataById').click(()=>{
     let movieId = document.getElementById("movieID").value;
-    let movieUrl = 'http://www.omdbapi.com/?i='+movieId+'&apikey=f2d72e97';
+    let movieUrl = 'https://www.omdbapi.com/?i='+movieId+'&apikey=f2d72e97';
           getAllData(movieUrl); 
 })
 
