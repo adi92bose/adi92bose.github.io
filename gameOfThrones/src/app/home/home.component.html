@@ -1,0 +1,62 @@
+<div class="container" style="text-align:center">
+  <div class="row" style="text-align:center; padding-bottom: 2rem" *ngIf="allItems">
+    <div *ngFor="let item of allItems" class="col-sm-6 col-md-4">
+      <div *ngIf="item.aliases">
+        <div class="card text-white bg-info mb-3" style="height: 30rem;border-radius: 25px">
+            <div class="card-body">
+              <div style="height: 8rem">
+              <h3 class="card-title" style="font-weight: bold;padding: 10px;">{{item.name}}</h3>
+              </div>
+              <div style="height: 7rem">
+              <h4 class="card-title">Aliases : {{item.aliases}}</h4>
+              </div>
+              <div style="height: 7rem">
+              <h4 class="card-title">Gender : {{item.gender}}</h4>
+              </div>
+              <div style="height: 8rem">
+              <a [routerLink]="['/characters',item.url.slice(49)]" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="height: 4rem;padding: 8px">More</a>
+              </div>
+            </div>
+        </div>
+      </div>
+        <div *ngIf="item.region">
+          <div class="card text-white bg-primary mb-3" style="height: 30rem;border-radius: 25px">
+              <div class="card-body">
+                <div style="height: 8rem">
+                <h3 class="card-title" style="font-weight: bold;padding: 10px;">{{item.name}}</h3>
+                </div>
+                <div style="height: 7rem">
+                <h4 class="card-title">Region : {{item.region}}</h4>
+                </div>
+                <div style="height: 7rem">
+                <h4 class="card-title">Coat : {{item.coatOfArms}}</h4>
+                </div>
+                <div style="height: 8rem">
+                <a [routerLink]="['/houses',item.url.slice(41)]" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="height: 4rem;padding: 8px">More</a>
+                </div>
+              </div>
+          </div>
+        </div>
+          <div *ngIf="item.numberOfPages">
+            <div class="card text-white mb-3" style="height: 30rem; background-color:turquoise;border-radius: 25px">
+                <div class="card-body">
+                  <div style="height: 10rem">
+                  <h3 class="card-title" style="font-weight: bold;padding: 10px;">{{item.name}}</h3>
+                  <h4 class="card-title">({{item.mediaType}})</h4>
+                  </div>
+                  <div style="height: 6rem">
+                  <h4 class="card-title">Pages : {{item.numberOfPages}}</h4>
+                  </div>
+                  <div style="height: 6rem">
+                  <h4 class="card-title">Released : {{item.released|date}}</h4>
+                  </div>
+                  <div style="height: 8rem">
+                  <a [routerLink]="['/books',item.url.slice(44)]" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="height: 4rem;padding: 8px">More</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+</div>

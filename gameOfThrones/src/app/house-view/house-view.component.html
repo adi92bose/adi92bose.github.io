@@ -1,0 +1,18 @@
+<body>
+<div class="card" style="width: 100%;text-align: center;padding: 5rem;" *ngIf="currentHouse">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="color:navy"><b>Url : </b>{{currentHouse.url}}</li>
+      <li class="list-group-item"><b>Name : </b>{{currentHouse.name}}</li>
+      <li class="list-group-item"><b>Region : </b>{{currentHouse.region}}</li>
+      <li class="list-group-item" *ngIf="currentHouse.words.length!=0"><b>Words : </b>{{currentHouse.words}}</li>
+      <li class="list-group-item" *ngIf="currentHouse.coatOfArms.length!=0"><b>CoatofArms : </b>{{currentHouse.coatOfArms}}</li>
+      <li class="list-group-item" *ngIf="currentHouse.overlord.length!=0"><b>Overlord : </b>{{currentHouse.overlord}}</li>
+      <li class="list-group-item" *ngIf="currentHouse.titles!=''"><b>Titles : </b>
+      <span *ngFor="let title of currentHouse.titles;let first=first;let last=last">{{title}}{{last ? '' : ', '}}</span></li>
+      <li class="list-group-item" *ngIf="currentHouse.swornMembers!=''"><b>Sworn Members : </b>
+        <span *ngFor="let member of currentHouse.swornMembers;let first=first;let last=last">{{member}}{{last ? '' : ', '}}</span></li>
+      <li class="list-group-item"><a [routerLink]="['/home']" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="height: 4rem;padding: 8px">Back</a></li>
+    </ul>
+</div>
+</body>
+

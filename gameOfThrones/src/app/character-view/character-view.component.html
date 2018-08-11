@@ -1,0 +1,17 @@
+<body>
+    <div class="card" style="width: 100%;text-align: center;padding: 5rem;" *ngIf="currentCharacter">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="color:navy"><b>Url : </b>{{currentCharacter.url}}</li>
+          <li class="list-group-item"><b>Name : </b>{{currentCharacter.name}}</li>
+          <li class="list-group-item"><b>Gender : </b>{{currentCharacter.gender}}</li>
+          <li class="list-group-item" *ngIf="currentCharacter.culture.length!=0"><b>Culture : </b>{{currentCharacter.culture}}</li>
+          <li class="list-group-item" *ngIf="currentCharacter.aliases!=''"><b>Aliases : </b>
+          <span *ngFor="let alias of currentCharacter.aliases;let first=first;let last=last">{{alias}}{{last ? '' : ', '}}</span></li>
+          <li class="list-group-item" *ngIf="currentCharacter.books!=''"><b>Books : </b>
+            <span *ngFor="let book of currentCharacter.books;let first=first;let last=last">{{book}}{{last ? '' : ', '}}</span></li>
+            <li class="list-group-item"><a [routerLink]="['/home']" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="height: 4rem;padding: 8px">Back</a></li>  
+        </ul>
+    </div>
+    </body>
+    
+    

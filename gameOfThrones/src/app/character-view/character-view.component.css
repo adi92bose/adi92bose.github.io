@@ -1,0 +1,7 @@
+.list-group-item{
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #ebebe0;
+    padding: 15px;
+}
